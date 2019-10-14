@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  curry-f:
+    image: nginx:alpine
+    ports:
+      - 4000:80
+    volumes:
+      - ./public:/var/www/curry-f
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    environment:
+      VIRTUAL_HOST: curry-f.dev.sankara.me
+      VIRTUAL_PORT: 4000
+      LETSENCRYPT_HOST: curry-f.dev.sankara.me
+      LETSENCRYPT_EMAIL: admin@sankara.me
+      ENABLE_IPV6: "true"
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
