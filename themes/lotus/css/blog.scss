@@ -116,7 +116,7 @@ img {
 
       @media (min-width: $mobile-breakpoint) {
         &.desktop-and-tablet-only {
-          display: table-caption; // minimizes line width
+          //display: table-caption; // minimizes line width
         }
       }
     }
