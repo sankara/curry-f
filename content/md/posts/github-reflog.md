@@ -16,8 +16,8 @@ local branch without fetching your coworkers changes first? One option of
 course, is to recover those commits from the coworkers local branch but if
 you are using Github there’s a way out.
 
-*First, find the commit id before you pushed your changes by using the [Events
- API](https://developer.github.com/v3/activity/events/#list-repository-events).*
+*First, find the commit id before you pushed your changes by using the 
+[Events API](https://developer.github.com/v3/activity/events/#list-repository-events).*
  
 ```shell script
 curl -u <username> https://api.github.com/repos/:owner/:repo/events
@@ -28,8 +28,8 @@ much like the reflog command. You would have to sift through the blob to
 locate your commit(s) that was lost. You can these use the ref/sha to create
 a new branch.
 
-*Create a new branch for the ref using the [Create Reference 
-API](https://developer.github.com/v3/git/refs/#create-a-reference):*
+*Create a new branch for the ref using the 
+[Create Reference API](https://developer.github.com/v3/git/refs/#create-a-reference):*
 
 ```shell script
 curl -u <github-username> -X POST -d ‘{“ref”:”refs/heads/<new-branch-name>”, “sha”:”<sha-from-step-1>"}’ https://api.github.com/repos/:owner/:repo/git/refs
