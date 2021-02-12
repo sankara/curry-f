@@ -11,7 +11,7 @@ services:
     environment:
       VIRTUAL_HOST: curry-f.dev.sankara.me
       VIRTUAL_PORT: 5000
-      LETSENCRYPT_HOST: curry-f.dev.sankara.me
+      LETSENCRYPT_HOST: curry-f.sankara.me
       LETSENCRYPT_EMAIL: admin@sankara.me
       ENABLE_IPV6: "true"
 
